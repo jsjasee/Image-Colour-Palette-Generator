@@ -9,6 +9,7 @@ class ImageProcessor:
 
     def extract_colours(self, form_data, tmp_path):
         with Image.open(tmp_path).convert("RGBA") as image_uploaded:
+            image_uploaded = image_uploaded.resize((600, 600))
             print(image_uploaded.height * image_uploaded.width)
             visible_pixels = [pixel[:3] for pixel in list(image_uploaded.getdata()) if pixel[3] > 0] # get the first 3 values of tuple
             # print(visible_pixels)
