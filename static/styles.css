@@ -1,0 +1,39 @@
+body {
+      background-color: #f5f5f5;
+}
+
+header {
+  background-color: #B9D4AA;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-weight: bold;
+}
+
+.btn-custom {
+  margin: 0.5rem;
+}
+
+.creator-bar {
+  background-color: #5A827E;
+  color: #cfe8ef;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.content {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 4px;
+}

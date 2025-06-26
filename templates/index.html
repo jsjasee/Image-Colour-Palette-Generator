@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block content %}
+    <!--  This is where the image will go  -->
+    <!--  To include subfolders in the url_for, must include the subfolder under filename. either concat the string using jinja notation or include the file name as you pass in the variable of img file name -->
+    <h2>Image</h2>
+    <img class="my-5" src="{{url_for('static', filename=img_file_name)}}" alt="Image uploaded">
+
+    <!-- This is where the table will go-->
+    {% if top_hex_codes: %}
+        <table class="table table-striped table-hover">
+
+            <thead>
+                <tr>
+                    <th scope="col">Colour</th>
+                    <th scope="col">Colour Code</th>
+                    <th scope="col">Percentage</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for colour in top_hex_codes : %}
+                    <tr>
+                        <!-- Bootstrap has no direct colour attribute, so have to use inline CSS -->
+                        <!-- Ensure padding is 0, so that div stretch to fill entire cell of the table,
+                        then we set a width and height for the div so that it shows up on the table and 100% ensures it fills the 'th' FULLY , and set a min-height so that the div remains visible-->
+                        <!--  if want to control the width of the first column, can add style="padding: 0;" to the 'th' element                      -->
+                        <th scope="row" class="p-0"><div style="background-color: {{colour}}; width: 100%; height: 100%; min-height: 40px;"></div></th>
+                        <td>{{colour}}</td>
+                        <td>{{top_hex_codes[colour] / number_of_pixels}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <!-- This is where your WTForm will go. -->
+    {{ render_form(form, novalidate=True) }}
+{% endblock %}
