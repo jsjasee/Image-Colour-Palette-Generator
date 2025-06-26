@@ -5,7 +5,9 @@
     <!--  This is where the image will go  -->
     <!--  To include subfolders in the url_for, must include the subfolder under filename. either concat the string using jinja notation or include the file name as you pass in the variable of img file name -->
     <h2>Image</h2>
-    <img class="my-5" src="{{url_for('static', filename=img_file_name)}}" alt="Image uploaded">
+    {% if img_file_name %}
+        <img class="my-5" src="{{img_file_link}}" alt="Image uploaded">
+    {% endif %}
 
     <!-- This is where the table will go-->
     {% if top_hex_codes: %}
