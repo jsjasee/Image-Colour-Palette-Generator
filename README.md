@@ -18,13 +18,6 @@ A Flask web app that extracts the top N most frequent colours from an uploaded i
 
 ---
 
-## 🚀 Demo
-
-![Screenshot](static/images/screenshot.png)  
-Upload your image and instantly see the most common colours it contains!
-
----
-
 ## 🛠️ Tech Stack
 
 - Python 3.11
@@ -67,7 +60,7 @@ APP_KEY=your_secret_key
 flask run
 Visit http://127.0.0.1:5000 to test locally.
 ```
-
+---
 ## 🧠 How It Works
 
 1. User uploads image → Flask saves it temporarily to /tmp
@@ -108,5 +101,6 @@ Images are base64-encoded and rendered directly in HTML using
 ```html
 <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
 ```
+---
 ## 📃 License
 MIT License
